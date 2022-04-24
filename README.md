@@ -1,2 +1,2 @@
-# Mokas
+# Datorika
 Lalala...
