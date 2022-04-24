@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h2>Gaidot dzimšanas dienu.</h2>
+        <hr>
+        <form>
+            
+            <p>Ievadi pilnu datumu, kad Tev būs tuvākā dzimšanas diena</p>
+            <p>Gads <input  type="text" name="gads"  id="gads"></p>
+            <p>Mēnesis <input type="text" name="menesis" id="menesis"></p>
+            <p>Diena <input type="text" name="datums" id="datums"></p>
+            <p><input type="button" name="poga" onclick="laiks();"
+                      value="Aprēķināt dienu skaitu līdz dzimšandienas dienai"></p>
+            
+            <p>Līdz svētkiem atlikušas 
+                <input type="text" id="dienas" name="dienas">
+                dienas : ))</p>
+        </form>
+        
+            <script>
+                function laiks(){
+                    var day = 1000 * 60 * 60 * 24;
+                    var now = new Date();
+                    var date = new Date(document.getElementById("gads").value, document.getElementById("menesis").value, document.getElementById("datums").value);
+                    var res = (Math.round(date.getTime()-now.getTime()) / (day) + 1).toFixed(0);
+                    document.getElementById("dienas").value = res;
+                }
+            </script>
+    </body>
+</html>
